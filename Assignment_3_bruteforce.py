@@ -87,39 +87,22 @@ print("Clean Cipher: ", clean_cipher)
 
 substituted = ""
 
+
+## Original Dictionary Attack
+
 with open('data.txt', 'w') as f:
-    p = [3, 2, 4, 0, 1]
-    permuted = decrypt_permutation(clean_cipher, p)
-    f.write(f"Trying Permutation: {p}\n")
-    for k in keygen(10):
-        substituted = ""
-        # print(f"Trying Permutation: {p}\n")
-        # print(f"Trying Key: {k}\n")
-        # f.write(f"Trying Permutation: {p}\n")
-        f.write(f"Trying Key: {k}\n")
-        for ch in permuted.lower():
-            try:
-                substituted += k[ch]
-            except:
-                substituted += ch
-        f.write(f"Substituted Text: {substituted}\n")
-
-
-### Original Dictionary Attack
-
-# with open('data.txt', 'w') as f:
-#     for p in permutation(data):
-#         permuted = decrypt_permutation(clean_cipher, p)
-#         f.write(f"Trying Permutation: {p}\n")
-#         for k in keygen(10):
-#             substituted = ""
-#             # print(f"Trying Permutation: {p}\n")
-#             # print(f"Trying Key: {k}\n")
-#             f.write(f"Trying Permutation: {p}\n")
-#             f.write(f"Trying Key: {k}\n")
-#             for ch in permuted.lower():
-#                 try:
-#                     substituted += k[ch]
-#                 except:
-#                     substituted += ch
-#             f.write(f"Substituted Text: {substituted}\n")
+    for p in permutation(data):
+        permuted = decrypt_permutation(clean_cipher, p)
+        f.write(f"Trying Permutation: {p}\n")
+        for k in keygen(10):
+            substituted = ""
+            # print(f"Trying Permutation: {p}\n")
+            # print(f"Trying Key: {k}\n")
+            f.write(f"Trying Permutation: {p}\n")
+            f.write(f"Trying Key: {k}\n")
+            for ch in permuted.lower():
+                try:
+                    substituted += k[ch]
+                except:
+                    substituted += ch
+            f.write(f"Substituted Text: {substituted}\n")
