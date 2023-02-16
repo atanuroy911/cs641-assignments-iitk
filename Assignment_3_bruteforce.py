@@ -76,11 +76,11 @@ cipher = "qmnjvsa nv wewc flct vprj tj tvvplvl fv xja vqildhc"
 ## DRIVER CODE
 
 data = list('01234')
-# for p in permutation(data):
-#     print(p)
-#
-# print(alphabet_permutation(3))
-# print(keygen(3))
+for p in permutation(data):
+    print(p)
+
+print(alphabet_permutation(3))
+print(keygen(3))
 
 clean_cipher = "".join([c for c in cipher if c.isalpha()])
 print("Clean Cipher: ", clean_cipher)
@@ -88,18 +88,38 @@ print("Clean Cipher: ", clean_cipher)
 substituted = ""
 
 with open('data.txt', 'w') as f:
-    for p in permutation(data):
-        permuted = decrypt_permutation(clean_cipher, p)
-        f.write(f"Trying Permutation: {p}\n")
-        for k in keygen(10):
-            substituted = ""
-            # print(f"Trying Permutation: {p}\n")
-            # print(f"Trying Key: {k}\n")
-            f.write(f"Trying Permutation: {p}\n")
-            f.write(f"Trying Key: {k}\n")
-            for ch in permuted.lower():
-                try:
-                    substituted += k[ch]
-                except:
-                    substituted += ch
-            f.write(f"Substituted Text: {substituted}\n")
+    p = [3, 2, 4, 0, 1]
+    permuted = decrypt_permutation(clean_cipher, p)
+    f.write(f"Trying Permutation: {p}\n")
+    for k in keygen(10):
+        substituted = ""
+        # print(f"Trying Permutation: {p}\n")
+        # print(f"Trying Key: {k}\n")
+        # f.write(f"Trying Permutation: {p}\n")
+        f.write(f"Trying Key: {k}\n")
+        for ch in permuted.lower():
+            try:
+                substituted += k[ch]
+            except:
+                substituted += ch
+        f.write(f"Substituted Text: {substituted}\n")
+
+
+### Original Dictionary Attack
+
+# with open('data.txt', 'w') as f:
+#     for p in permutation(data):
+#         permuted = decrypt_permutation(clean_cipher, p)
+#         f.write(f"Trying Permutation: {p}\n")
+#         for k in keygen(10):
+#             substituted = ""
+#             # print(f"Trying Permutation: {p}\n")
+#             # print(f"Trying Key: {k}\n")
+#             f.write(f"Trying Permutation: {p}\n")
+#             f.write(f"Trying Key: {k}\n")
+#             for ch in permuted.lower():
+#                 try:
+#                     substituted += k[ch]
+#                 except:
+#                     substituted += ch
+#             f.write(f"Substituted Text: {substituted}\n")
