@@ -361,8 +361,8 @@ int main()
     
     BYTE key[56]={0,1,1,0,1,1,1,0,0,1,0,1,1,1,1,0,0,1,1,1,1,0,1,1,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,1,1,0,1,0,1,0,0,1,1};
     r=6;
-    //BYTE plain[9]={243, 118, 137, 40, 140, 34, 129, 15,'\0'}; left half of password
-    BYTE plain[9]={216, 38, 38, 137, 143, 103, 25, 143, '\0'}; //right half of password
+//    BYTE plain[9]={57, 28, 218, 72, 84, 168, 50, 36, '\0'}; // left half of password
+    BYTE plain[9]={69, 61, 130, 218, 232, 14, 8, 105, '\0'}; //right half of password
     flag='N';
     h=0;
     set_the_key(sw1,key,r);

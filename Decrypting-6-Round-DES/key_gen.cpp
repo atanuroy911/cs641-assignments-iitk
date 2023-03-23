@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-main()
+int main()
 {
 	FILE *fo;
 	fo=fopen("key_possible.txt","w+");

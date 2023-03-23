@@ -168,6 +168,7 @@ for(z=0;z<48;z++)
     for (int i=0;i<48;i++) 
         KEY[a[i]-1]=key[i];
     for (int i=0;i<56;i++) ofile<<KEY[i];
+    cout << KEY[i];
     return 0;
 }
 
