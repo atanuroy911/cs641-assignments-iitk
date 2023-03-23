@@ -68,7 +68,7 @@ def input_pairs():
 
     f = open('input.txt', 'w+')
     count = 0
-    while count < 500:
+    while count < 10000:
         plaintext1 = gen_random_str(input_set, 16)
         f.write(plaintext1 + ",\n")
         plaintext2 = generate_pair(plaintext1)
@@ -130,7 +130,7 @@ create_alphabet_map(0)
 
 # PHASE 1
 # Uncomment the following code to run Phase 1 - generate input pairs
-input_pairs()
+# input_pairs()
 
 # PHASE 2 - Run Response.py to get ciphertexts of the input pairs
 

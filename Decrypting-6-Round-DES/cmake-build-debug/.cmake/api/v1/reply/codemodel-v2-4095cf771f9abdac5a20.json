@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.24"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Decrypting_6_Round_DES",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Decrypting_6_Round_DES::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Decrypting_6_Round_DES-Debug-c173a9a1913d751929a8.json",
+					"name" : "Decrypting_6_Round_DES",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/roy/Desktop/Modern-Cryptography/Assignments/Decrypting-6-Round-DES/cmake-build-debug",
+		"source" : "/Users/roy/Desktop/Modern-Cryptography/Assignments/Decrypting-6-Round-DES"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

@@ -1,6 +1,7 @@
 from des import *
 from generate_roundkeys import *
-from generate_textstrings import alphabet_map, create_alphabet_map, bit_set
+from generate_textstrings import alphabet_map, create_alphabet_map, bit_set, input_set
+
 
 def create_reverse_map():
   global reverse_map

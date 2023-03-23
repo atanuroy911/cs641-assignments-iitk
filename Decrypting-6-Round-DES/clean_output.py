@@ -5,7 +5,7 @@ import re
 pattern = re.compile("Slowly, a new text starts appearing on the screen. It reads ...")
 flagged = False
 
-f = open("output_pairs.txt", "w")
+f = open("output_pairs_org.txt", "w")
 
 for line in open("game_outputs.log"):
     if flagged:

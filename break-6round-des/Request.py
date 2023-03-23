@@ -3,14 +3,14 @@ import json
 import warnings
 
 warnings.filterwarnings('ignore')
-url = "https://172.27.26.163:9999/des"
+url = "https://172.27.26.188:22/des"
 headers = {'Content-type': 'application/json',
-           'Orgin': 'https://172.27.26.163:9999',
-           'Referer': 'https://172.27.26.163:9999/game/caves.swf'}
+           'Orgin': 'https://172.27.26.188:22',
+           'Referer': 'https://172.27.26.188:22/game/caves.swf'}
 
 f = open('input.txt')
 f2 = open('response.txt', 'w+')
-data = '{"password":"555acfd4d3c1b7a398d71e4c1538ad4d","teamname":"Amalgam","plaintext":"password"}'
+data = '{"password":"army7890","teamname":"dark_army","plaintext":"password"}'
 data = json.loads(data)
 cipherTexts = []
 count = 0
