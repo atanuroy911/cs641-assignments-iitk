@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+
 using namespace std;
 int main()
 {
@@ -19,7 +21,7 @@ int main()
     cin >> gpname;
     cout << "\nEnter your team pwd : ";
     cin >> gppwd;
-    script << "expect  \"student@65.0.124.36's password:\"\n";
+    script << "expect  \"student@172.27.26.188's password:\"\n";
     script << "send -- \"";
     script << sshpwd;
     script << "\\r\"\n\n";

@@ -75,7 +75,7 @@ int main()
     long int count = 0;
     char temp1[64],temp2[64],temp3[64];
 
-    while(count <= 65000)
+    while(count <= 40000)
     {
       count++;
       fscanf(f_g_xor,"%s",temp1);
