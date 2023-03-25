@@ -2,6 +2,10 @@ import random
 import numpy as np
 import math
 
+# import pyfiglet module
+import pyfiglet
+from os import path
+
 
 def toBinary(a):
     l, m = [], []
@@ -12,7 +16,11 @@ def toBinary(a):
     return m
 
 
+result = pyfiglet.figlet_format("CS641 - Assignment - DARK ARMY", font="digital")
+print(result)
+
 ciphertext = "iogrspjnkjpnihhjjkisnhsptnftfnlo"
+print("Given Password: ", ciphertext)
 print("Length of ciphertext: ", len(ciphertext))
 print("Ciphertext (Binary): ", toBinary(ciphertext))
 
@@ -43,6 +51,10 @@ def bin2hex(bin_string):
     return hex(int(bin_string, 2))[2:].upper()
 
 
+print("\n")
+result = pyfiglet.figlet_format("Step 1: Find Difference from Characteristics", font="digital")
+print(result)
+
 char_seq = hex2bin(diff_char)
 diff = ''
 for i in inv_init_perm:
@@ -50,36 +62,61 @@ for i in inv_init_perm:
 print("Difference Found: ", diff)
 print("Difference Found (HEX): ", bin2hex(diff))
 
-list_diff = [int(char) for char in diff]
-print(list_diff)
-Bin_Inp = []
-for i in range(100000):
-    tmp = '{:0>64}'.format(format(i, "b"))
-    tmp = [int(tmp[j]) for j in range(64)]
-    Bin_Inp.append(tmp)
-    Bin_Inp.append(list(np.bitwise_xor(tmp, list_diff)))
+result = pyfiglet.figlet_format("Step 2: Generate Input Pairs", font="digital")
+print(result)
 
-mapping = {}
-for i in range(16):
-    num = '{:0>4}'.format(format(i, "b"))
-    numi = int(num[3]) + 2 * int(num[2]) + int(num[1]) * 4 + int(num[0]) * 8
-    mapping[num] = chr(ord('f') + numi)
-print(mapping)
+if not path.isfile('inputs.txt'):
+    print("Run input_gen.cpp for generating 100000 random inputs")
 
-Str_inp = []
-for i in range(len(Bin_Inp)):
-    string = ""
-    for j in range(16):
-        tmp = str(Bin_Inp[i][j * 4:(j * 4) + 4][0]) + str(Bin_Inp[i][j * 4:(j * 4) + 4][1]) + str(
-            Bin_Inp[i][j * 4:(j * 4) + 4][2]) + str(Bin_Inp[i][j * 4:(j * 4) + 4][3])
-        string = string + mapping[tmp]
-    Str_inp.append(string)
+result = pyfiglet.figlet_format("Step 3: Get Output from Server", font="digital")
+print(result)
 
-len(Str_inp)
-print(Str_inp[3])
+if not path.isfile('game_outputs.log'):
+    print("Run run_game.sh for getting ciphertexts for the 100000 random inputs")
+else:
+    print("Game Output File Exists")
 
-file = open("inputs.txt", "w")
-for i in Str_inp:
-    file.write(i)
-    file.write("\n")
-file.close()
+if not path.isfile('output_pairs.txt'):
+    import re
+
+    pattern = re.compile("Slowly, a new text starts appearing on the screen. It reads ...")
+    flagged = False
+
+    f = open("output_pairs.txt", "w")
+
+    for line in open("game_outputs.log"):
+        if flagged:
+            flagged = False
+            f.write("{}\n".format(line.strip()))
+        else:
+            for match in re.finditer(pattern, line):
+                if match:
+                    flagged = True
+
+    f.close()
+
+else:
+    print("Output Pairs File Exists")
+
+result = pyfiglet.figlet_format("Step 4: Convert Output to Binary", font="digital")
+print(result)
+
+if not path.isfile('outputs.txt'):
+    print("Run strToBin.cpp for converting output to Binary")
+else:
+    print("Output File Exists")
+
+result = pyfiglet.figlet_format("Step 5: Take input's XOR with Characteristics", font="digital")
+print(result)
+
+if not path.isfile('input_pairs.txt'):
+    print("Run xorify.cpp for getting XOR of all inputs")
+else:
+    print("Input Pairs File Exists")
+
+result = pyfiglet.figlet_format("Step 6: Run Analysis and Find KEY And Decrypt Password", font="digital")
+print(result)
+
+print("Run DES_MASTER_DECRYPTION.cpp for getting the KEY")
+
+
