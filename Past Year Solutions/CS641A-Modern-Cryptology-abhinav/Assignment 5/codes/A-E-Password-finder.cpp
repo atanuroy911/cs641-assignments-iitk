@@ -118,7 +118,7 @@ int main()
 	cout << endl;
 	cout << "Password : ";
 	
-	string password = "msfnhlhklmlqfgfomnkmhsftjrkmfogr";
+	string password = "gslsggimhuksgsjokmkoiglimjlmktkr";
     for (int i = 0; i < 2; i++)
     {
         bits7 out[8];
