@@ -1,3 +1,0 @@
-/Users/roy/Desktop/Modern-Cryptography/Assignments/Decrypting-6-Round-DES/cmake-build-debug/CMakeFiles/Decrypting_6_Round_DES.dir
-/Users/roy/Desktop/Modern-Cryptography/Assignments/Decrypting-6-Round-DES/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/roy/Desktop/Modern-Cryptography/Assignments/Decrypting-6-Round-DES/cmake-build-debug/CMakeFiles/rebuild_cache.dir
